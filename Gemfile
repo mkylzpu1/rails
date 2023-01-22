@@ -85,3 +85,4 @@ gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'ransack'
 gem "kaminari"
+gem "bootstrap_form"

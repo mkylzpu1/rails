@@ -72,7 +72,7 @@ group :test do
   gem "mysql2"
   gem "dotenv-rails"
   gem "devise"
-  gem 'ransack'
+
 end
 
 # 日本語化に必要なGem
@@ -83,3 +83,4 @@ gem 'devise-i18n'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'ransack'

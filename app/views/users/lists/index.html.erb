@@ -1,0 +1,30 @@
+<!--検索フォーム-->
+<%= search_form_for @q, url: users_lists_path do |f| %>
+  <!--name_contは、あいまい検索を指定-->
+  <%= f.text_field :id %>
+  <%= f.submit "検索" %>
+<% end %>
+<!--検索結果-->
+<table>
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id) %></th>
+      <th><%= sort_link(@q, :email) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @users.present? %>
+      <!--検索がヒットした場合-->
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+      </tr>
+      <% end %>
+    <% else %>
+      <!--検索がヒットしなかった場合-->
+      <p>検索結果はありません</p>
+    <% end %>
+
+  </tbody>
+</table>

@@ -3,19 +3,17 @@ Rails.application.routes.draw do
     :sessions => "users/sessions",
     :registrations => "users/registrations"
   }
-  devise_scope :user do
-    root "users/sessions#new"
-  end
-  # devise_scope :user do
-  #   get "/" => "users/sessions#new"
-  #   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "users/sessions#new"
+  # 認証されている場合のルート
   authenticated :user do
     root to: 'users/registrations#edit', as: :user_root
   end
 
-  # root to: 'users/sessions#new'
+  # 認証されていない場合のルート
+  devise_scope :user do
+    root "users/sessions#new"
+    get 'users/lists', to: 'users/lists#index'
+  end
+
+
 end

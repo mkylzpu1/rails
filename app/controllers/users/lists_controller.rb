@@ -3,7 +3,7 @@ class Users::ListsController < ApplicationController
 
   def index
     #distinct: trueは重複したデータを除外
-    @users = @q.result(distinct: true)
+    @users = @q.result(distinct: true).page(params[:page])
   end
 
   def search

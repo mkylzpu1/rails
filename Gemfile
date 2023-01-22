@@ -74,3 +74,12 @@ group :test do
   gem "devise"
   gem 'ransack'
 end
+
+# 日本語化に必要なGem
+# gem 'rails-i18n', '~> 5.1'
+gem 'devise-i18n'
+
+# Bootstrapに必要なGem
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+gem 'devise-bootstrap-views', '~> 1.0'

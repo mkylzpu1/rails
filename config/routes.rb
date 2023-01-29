@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     get 'users/lists', to: 'users/lists#index'
   end
 
+  # letter_opener_web関連
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
 end

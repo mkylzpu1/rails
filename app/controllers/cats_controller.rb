@@ -34,6 +34,9 @@ class CatsController < ApplicationController
         format.json { render json: @cat.errors, status: :unprocessable_entity }
       end
     end
+
+    # メール送信テスト用
+    InquiryMailer.send_mail(@cat).deliver_later
   end
 
   # PATCH/PUT /cats/1 or /cats/1.json

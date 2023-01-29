@@ -1,0 +1,20 @@
+<%= turbo_frame_tag cat do %>
+<div id="<%= dom_id cat %>">
+  <p>
+    <strong>Name:</strong>
+    <%= cat.name %>
+  </p>
+
+  <p>
+    <strong>Age:</strong>
+    <%= cat.age %>
+  </p>
+  <div class="col-4">
+      <div class="d-flex justify-content-end">
+        <%= link_to "編集", edit_cat_path(cat), class: "btn btn-sm btn-outline-primary me-2" %>
+        <%= button_to "削除", cat, method: :delete, class: "btn btn-sm btn-outline-danger" %>
+      </div>
+    </div>
+
+</div>
+<% end %>
